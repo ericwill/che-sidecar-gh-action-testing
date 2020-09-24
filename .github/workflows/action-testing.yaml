@@ -1,0 +1,29 @@
+on: [push]
+  
+jobs:
+  build:
+    env:
+      IMAGE_NAME: quay.io/eclipse/che-sidecar-camelk
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: Clone source code
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 1
+        path: this-repo
+
+    - name: Clone source code
+      uses: actions/checkout@v2
+      with:
+        repository: ericwill/che-plugin-registry
+        path: plugin-registry
+    
+    - name: ls
+      id: list
+      uses: ericwill/build-action@v40
+      with:
+        repo: test
+    
+    - name: Get output
+      run: echo "LS was ${{ steps.list.outputs.return }}"

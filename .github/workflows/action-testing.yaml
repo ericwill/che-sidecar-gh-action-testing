@@ -17,13 +17,14 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: ericwill/che-plugin-registry
-        path: plugin-registry
+        path: this-repo/plugin-registry
     
     - name: ls
       id: list
-      uses: ericwill/build-action@v40
+      uses: che-dockerfiles/plugin-sidecar-update-action@v2
       with:
-        repo: test
+        plugin-registry: this-repo/plugin-registry
     
     - name: Get output
-      run: echo "LS was ${{ steps.list.outputs.return }}"
+      run: |
+        cat this-repo/plugin-registry/vscode-extensions.json

@@ -21,7 +21,7 @@ jobs:
     
     - name: ls
       id: list
-      uses: che-dockerfiles/plugin-sidecar-update-action@v3
+      uses: che-dockerfiles/plugin-sidecar-update-action@v4
       with:
         plugin-registry: this-repo/plugin-registry
     

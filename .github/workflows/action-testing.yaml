@@ -39,3 +39,4 @@ jobs:
         branch: test-sidecar-update-action-pr
         path: this-repo/plugin-registry
         base: master
+        push-to-fork: che-dockerfiles/che-plugin-registry

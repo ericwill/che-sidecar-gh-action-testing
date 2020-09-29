@@ -35,6 +35,7 @@ jobs:
       with:
         commit-message: "Test PR"
         committer: Eric Williams <ericwill@redhat.com>
+        author: Eric Williams <ericwill@redhat.com>
         branch: test-sidecar-update-action-pr
         path: this-repo/plugin-registry
         base: master

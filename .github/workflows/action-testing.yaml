@@ -16,6 +16,7 @@ jobs:
     - name: Clone source code
       uses: actions/checkout@v2
       with:
+        fetch-depth: 1
         repository: ericwill/che-plugin-registry
         path: this-repo/plugin-registry
     
@@ -28,3 +29,12 @@ jobs:
     - name: Get output
       run: |
         cat this-repo/plugin-registry/vscode-extensions.json
+
+    - name: Create PR
+      uses: peter-evans/create-pull-request@v3
+      with:
+        commit-message: "Test PR"
+        committer: Eric Williams <ericwill@redhat.com>
+        branch: test-sidecar-update-action-pr
+        path: this-repo/plugin-registry
+        base: master

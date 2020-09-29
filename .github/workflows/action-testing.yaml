@@ -34,8 +34,6 @@ jobs:
       uses: peter-evans/create-pull-request@v3
       with:
         commit-message: "Test PR"
-        committer: CHE Bot <che-bot@eclipse.org>
-        author: CHE Bot <che-bot@eclipse.org>
         branch: test-sidecar-update-action-pr
         path: this-repo/plugin-registry
         base: master

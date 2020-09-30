@@ -30,6 +30,12 @@ jobs:
       run: |
         cat this-repo/plugin-registry/vscode-extensions.json
 
+    - name: Set git user
+      run: |
+        cd this-repo/plugin-registry
+        git config user.email che-bot@eclipse.org
+        git config user.name "CHE Bot"
+
     - name: Create PR
       uses: peter-evans/create-pull-request@v3
       with:
